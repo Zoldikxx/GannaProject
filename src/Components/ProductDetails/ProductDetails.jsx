@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import products from './staticItems/staticItems';
+import products from '../Products/Items/Items';
 
 export default function ProductDetails() {
   const imageUrl = localStorage.getItem("imageUrl");
-  const productId = localStorage.getItem("productId");
+  const id = localStorage.getItem("productId");
 
-  console.log("5555550", productId);
+  console.log("ProductId", id);
   
   const [productDetails, setProductDetails] = useState(null);
 
@@ -13,14 +13,17 @@ export default function ProductDetails() {
     // Fetch product details based on productId (replace with actual data fetching)
     const fetchProductDetails = async () => {
       // Simulate fetching product details from API/database
-      const details = await products[productId];
+      const productslist =  products;
+      const details = await products[id];
+      console.log("Products", productslist)
+      console.log("Details", details);
       setProductDetails(details);
     };
 
     fetchProductDetails();
-  }, [productId]);
+  }, [id]);
 
-  console.log("111110",productId);
+  console.log("ProductId",id);
 
   return (
     <div>
