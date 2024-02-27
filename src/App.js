@@ -11,7 +11,7 @@ import Register from './Components/Register/Register';
 import Orders from './Components/Orders/Orders';
 import Address from './Components/Address/Address';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
-
+import PaymentConfirmation from './Components/Payment/Payment';
 function App() {
   let routers = createBrowserRouter([
     {path:'', element:<Layout /> , children:[
@@ -24,6 +24,8 @@ function App() {
       {path:'orders', element: <Orders />},
       {path:'address', element: <Address />},
       {path:'productDetails', element: <ProductDetails />},
+      {path:'payment', element: <PaymentConfirmation />}
+
     ]}
   ])
   return <RouterProvider router={routers}></RouterProvider>
